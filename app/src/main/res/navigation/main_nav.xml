@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/habitListFragment">
+    <fragment
+        android:id="@+id/habitListFragment"
+        android:name="com.example.mvvmnote.HabitListFragment"
+        android:label="Habit"
+        tools:layout="@layout/fragment_habit_list" >
+        <action
+            android:id="@+id/action_habitListFragment_to_createHabitItemFragment"
+            app:destination="@id/createHabitItemFragment" />
+        <action
+            android:id="@+id/action_habitListFragment_to_updateHabitItemFragment"
+            app:destination="@id/updateHabitItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createHabitItemFragment"
+        android:name="com.example.mvvmnote.CreateHabitItemFragment"
+        android:label="Create Habit"
+        tools:layout="@layout/fragment_create_habit_item" >
+        <action
+            android:id="@+id/action_createHabitItemFragment_to_habitListFragment"
+            app:destination="@id/habitListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateHabitItemFragment"
+        android:name="com.example.mvvmnote.UpdateHabitItemFragment"
+        android:label="Update Habit"
+        tools:layout="@layout/fragment_update_habit_item" >
+        <action
+            android:id="@+id/action_updateHabitItemFragment_to_habitListFragment"
+            app:destination="@id/habitListFragment" />
+    </fragment>
+</navigation>
