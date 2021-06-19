@@ -66,7 +66,9 @@ class CreateHabitItemFragment : Fragment(R.layout.fragment_create_habit_item),
         title = binding.etHabitTitle.text.toString()
         description = binding.etHabitDescription.text.toString()
         timeStamp = "$cleanDate $cleanTime"
-        if (!(title.isEmpty()|| description.isEmpty() || timeStamp.isEmpty() || drawableSelected ==0)){
+
+        if (!(title.isEmpty()|| description.isEmpty() || timeStamp.length<16 || drawableSelected ==0)){
+
             val habit = Habit(0,title,description,timeStamp,drawableSelected)
             habitViewModel.addHabit(habit)
             Toast.makeText(requireContext(), "Habit created successfully!",Toast.LENGTH_SHORT).show()

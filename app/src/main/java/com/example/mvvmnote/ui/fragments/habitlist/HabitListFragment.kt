@@ -37,7 +37,10 @@ class HabitListFragment : Fragment(R.layout.fragment_habit_list) {
             binding.rvHabits.layoutManager = LinearLayoutManager(requireContext())
         binding.rvHabits.setHasFixedSize(true)
         habitViewModel = ViewModelProvider(requireActivity()).get(HabitViewModel::class.java)
+
+        /*test create crash*/
         //habitViewModel.deleteAllHabit()
+
         habitViewModel.getAllHabit.observe(viewLifecycleOwner, Observer {
             adapter.setData(it)
             habitList = it
